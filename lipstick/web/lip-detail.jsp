@@ -84,15 +84,27 @@
             border-radius: 20px;
         }
         .button {
-            background-color:rgb(35,35,35);
+            background-color:black;
             border: none;
-            color: white;
-            padding: 15px 32px;
+            color: lightgray;
+            padding: 16px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
         }
+        .button1:hover {
+            background-color: #555555;
+            color: white;
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -124,17 +136,55 @@
                 </div>
                 <div class="col-4">
                     <h4>${lip.name} </h4>
-<%--                    <p>${lip.price}</p>--%>
+                    <h4>${lip.price}元</h4>
                     <form>
                         <input type="radio" name="" value="">
 
                     <span>专属刻字
-                    勾选后点击加入购物袋，即享专属定制刻字服务。刻字服务为80元/次，如果每笔订单满800元，可尊享免费刻字服务。刻字工艺需耗时5工作日，最终配送时间会相应延长
+                    勾选后点击加入购物袋，即享专属定制刻字服务。刻字服务为80元/次，如果每笔订单满800元，
+                        可尊享免费刻字服务。刻字工艺需耗时5工作日，最终配送时间会相应延长
                     </span></form>
-                    <div class="button">
+                    <form action="demo-form.php" method="get">
+                        <input list="browsers" name="browser">
+                        <datalist id="browsers">
+                            <option value="B20米白色（HOT）">
+                            <option value="B15粉白色">
+                            <option value="B25桃粉色">
+                            <option value="B30自然色">
+                            <option value="B10象牙色(HOT)">
+                        </datalist>
+
+                        <input type="submit">
+                    </form>
+                    <form action="demo-form.php" method="get">
+                        <input list="browserss" name="browsers">
+                        <datalist id="browserss">
+                            <option value="N°12干枯玫瑰">
+                            <option value="N°1呛口辣椒">
+                            <option value="N°2活力亮橘">
+                            <option value="N°4浆果梅紫">
+                            <option value="N°9棕调酒红">
+                        </datalist>
+                        <input type="submit">
+                    </form>
+                    <form action="demo-form.php" method="get">
+                        <input list="browserse" name="browsere">
+                        <datalist id="browserse">
+                            <option value="40ml">
+                            <option value="60ml">
+                            <option value="100ml">
+                        </datalist>
+                        <input type="submit">
+                    </form>
+                    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+                        <input type="range" id="a" value="50">5</output>
+                        <p>限购五只</p>
+                    </form>
+                    <button class="button button1">
                         <i class="iconfont">&#xe601;</i>
-                        <span>添加到购物车</span>
-                        </div>
+                        购物车</button>
+
+
 
                 </div>
             </div>
@@ -142,7 +192,7 @@
         <div class="col-4">
             <h3>热门标签</h3>
             <hr>
-            <img src="${pageContext.request.contextPath}/images/right.png" alt="">
+            <img src="${pageContext.request.contextPath}/images/right2.png" alt="">
         </div>
     </div>
 

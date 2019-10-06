@@ -10,6 +10,9 @@
 <%@ page import="javax.sound.sampled.Clip" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <head>
   <title>口红官网</title>
   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
@@ -22,6 +25,8 @@
       margin: auto;
       width: 80%;
       border-bottom: 1px solid lightgray;
+        display: flex;
+        justify-content: space-between;
     }
     header img {
       height: 70%;
@@ -99,7 +104,7 @@
     }
     .col-4 img {
       margin: 10px 5px 20px 5px;
-      width: 80%;
+      width: 85%;
       background-color: #d5d5d5;
     }
     hr {
@@ -111,6 +116,7 @@
         text-align: center;
         border: 3px solid white;
     }
+
 
   </style>
 </head>
@@ -124,16 +130,47 @@
 </div>
 
 
+
+
+<div class="container" style="padding: 10px 5px 10px;" >
+    <i class="iconfont">&#xe600;</i>
+    <button type="button" class="btn btn-default" title="送货与退货"
+            data-container="body" data-toggle="popover" data-placement="bottom"
+            data-content="订单跟踪"
+            >专柜查询
+    </button>
+    <i class="iconfont">&#xe600;</i>
+    <button type="button" class="btn btn-default" title="联系我们"
+            data-container="body" data-toggle="popover" data-placement="bottom"
+            data-content="在线咨询400-820-6362（9:00-21:00）"
+    >客服中心
+    </button>
+    <i class="iconfont">&#xe600;</i>
+    <button type="button" class="btn btn-default" title="购物袋"
+            data-container="body" data-toggle="popover" data-placement="bottom"
+            data-content="您的购物袋是空的马上添加您最喜欢的产品"
+    >购物袋-0件商品
+    </button>
+</div>
+<script>
+    $(function (){
+        $("[data-toggle='popover']").popover();
+
+    });
+</script>
 <header>
-  <i class="iconfont">&#xe600;</i>
-  <span>专柜咨询 · 客服中心</span>
-  <img src="images/head1.png">
-</header>
+    <img src="images/head1.png"></header>
+
+
+
 
 <%--大图区--%>
 <div id="show">
     <img src="images/show1.jpg"  width="100%" height="100%">
 </div>
+
+
+
 
 <%--搜索区--%>
 <div id="search">
@@ -154,7 +191,6 @@
             <h3>YSL FAVORITES</h3>
             <h3>明星产品</h3>
         </div>
-
       <hr>
       <div class="row">
         <%--遍历图书数据集合，将每个图书对象放入页面对象--%>
@@ -164,7 +200,7 @@
         %>
         <%--引用col-2表示每行显示5本，再追加card细节样式--%>
         <div class="col-3 card">
-          <%--点击每本图书封面图，地址栏跳转为/detail/id,进入图书详情Servlet--%>
+          <%--点击口红封面图，地址栏跳转为/detail/id,进入图书详情Servlet--%>
           <a href="${pageContext.request.contextPath}/detail/${lip.id}">
             <div class="center"> <img src="images/${lip.cover}" alt=""></div>
           </a>
@@ -177,15 +213,15 @@
       </div>
     </div>
 
+
     <div class="col-4">
       <h3>YSL BEAUTY</h3>
-
           <h3>搜索发现</h3>
       <hr>
-<%--      <img src="images/right1.png" >--%>
         <img src="images/right2.png">
     </div>
   </div>
+
 
   <footer>
     <ul>
